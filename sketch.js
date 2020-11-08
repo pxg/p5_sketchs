@@ -12,24 +12,43 @@ function draw() {
     background('black');
     noFill();
     stroke(255);
-    //point(width * 0.5, height * 0.5);
-    //point(width * 0.5, height * 0.25);
 
+    draw_block(1);
+    draw_block(2);
+    draw_block(3);
+    draw_block(4);
+    draw_block(5);
+    draw_block(6);
+    draw_block(7);
+    draw_block(8);
+    draw_block(9);
+    draw_block(10);
+    stroke(0, 153, 255);
+    draw_block(11);
+    draw_block(12);
+    draw_block(13);
+
+    draw_block(58);
+    draw_block(59);
+    draw_block(60);
+
+    /*
     if (frameCount % 60 == 0) {
         old_timer = timer;
         timer++;
         console.log(timer, old_timer);
     }
-    //if(old_timer != timer)
+    */
+}
 
-    y = height - unit;
-    for(row=1; row<=6; row++){
-        x = 0;
-        for(col=1; col<=10; col++){
-            rect(x, y, unit, unit);
-            x += unit;
-        }
-        y -= unit
-    }
-    //old_timer = timer
+function draw_block(number) {
+    // Calculate the row
+    y = height - unit - (int(number / 10) * unit);
+    remainder = number % 10
+
+    // Calculate the column
+    col = (remainder - 1)
+    x = col * unit;
+    rect(x, y, unit, unit);
+    // TODO: why does number 60 not render?
 }
