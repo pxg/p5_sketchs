@@ -1,8 +1,8 @@
 var unit = 100;
 
 function setup() {
-    w = 1000;
-    h = 400;
+    w = unit * 10;
+    h = unit * 6;
     createCanvas(w, h);
 }
 
@@ -13,9 +13,13 @@ function draw() {
     //point(width * 0.5, height * 0.5);
     //point(width * 0.5, height * 0.25);
 
-    x = 0
-    for(n=1; n<=10; n++){
-        rect(x, height - unit, unit, unit);
-        x += unit;
+    y = height - unit;
+    for(row=1; row<=6; row++){
+        x = 0;
+        for(col=1; col<=10; col++){
+            rect(x, y, unit, unit);
+            x += unit;
+        }
+        y -= unit
     }
 }
