@@ -31,19 +31,30 @@ function draw() {
     draw_block(59);
     draw_block(60);
     */
+    draw_blocks(12);
+    /*
     if (frameCount % 60 == 0) {
         timer++;
-        draw_block(timer);
+    }
+    */
+}
+
+
+function draw_blocks(number) {
+    for (i = 1; i <= number; i++) {
+        draw_block(i);
     }
 }
 
 function draw_block(number) {
+    number = number - 1;
+
     // Calculate the row
     y = height - unit - (int(number / 10) * unit);
     remainder = number % 10
 
     // Calculate the column
-    col = (remainder - 1)
+    col = remainder
     x = col * unit;
     rect(x, y, unit, unit);
     // TODO: why does number 60 not render?
