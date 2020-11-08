@@ -12,37 +12,12 @@ function setup() {
 function draw() {
     noFill();
     stroke(255);
-    /*
-    draw_block(1);
-    draw_block(2);
-    draw_block(3);
-    draw_block(4);
-    draw_block(5);
-    draw_block(6);
-    draw_block(7);
-    draw_block(8);
-    draw_block(9);
-    draw_block(10);
-    stroke(0, 153, 255);
-    draw_block(11);
-    draw_block(12);
-    draw_block(13);
-    draw_block(58);
-    draw_block(59);
-    */
-    //draw_block(60);
     if (frameCount % 60 == 0) {
         timer++;
-        draw_blocks(timer);
+        draw_block(timer);
     }
 }
 
-
-function draw_blocks(number) {
-    for (i = 1; i <= number; i++) {
-        draw_block(i);
-    }
-}
 
 function draw_block(number) {
     number -= 1;
