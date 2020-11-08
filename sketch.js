@@ -1,6 +1,5 @@
 let unit = 100;
-let timer = 0
-let old_timer = 0
+let timer = 55
 
 function setup() {
     w = unit * 10;
@@ -14,6 +13,10 @@ function draw() {
     stroke(255);
     if (frameCount % 60 == 0) {
         timer++;
+        if (timer == 60){
+            timer = 0;
+            background('black');
+        }
         draw_block(timer);
     }
 }
