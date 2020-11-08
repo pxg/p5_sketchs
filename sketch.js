@@ -6,10 +6,10 @@ function setup() {
     w = unit * 10;
     h = unit * 6;
     createCanvas(w, h);
+    background('black');
 }
 
 function draw() {
-    background('black');
     noFill();
     stroke(255);
     /*
@@ -29,14 +29,12 @@ function draw() {
     draw_block(13);
     draw_block(58);
     draw_block(59);
-    draw_block(60);
     */
-    draw_blocks(12);
-    /*
+    //draw_block(60);
     if (frameCount % 60 == 0) {
         timer++;
+        draw_blocks(timer);
     }
-    */
 }
 
 
@@ -47,15 +45,14 @@ function draw_blocks(number) {
 }
 
 function draw_block(number) {
-    number = number - 1;
+    number -= 1;
 
     // Calculate the row
     y = height - unit - (int(number / 10) * unit);
     remainder = number % 10
 
     // Calculate the column
-    col = remainder
-    x = col * unit;
+    x = remainder * unit;
     rect(x, y, unit, unit);
     // TODO: why does number 60 not render?
 }
