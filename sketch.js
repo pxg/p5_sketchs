@@ -12,7 +12,7 @@ function draw() {
     background('black');
     noFill();
     stroke(255);
-
+    /*
     draw_block(1);
     draw_block(2);
     draw_block(3);
@@ -27,18 +27,14 @@ function draw() {
     draw_block(11);
     draw_block(12);
     draw_block(13);
-
     draw_block(58);
     draw_block(59);
     draw_block(60);
-
-    /*
-    if (frameCount % 60 == 0) {
-        old_timer = timer;
-        timer++;
-        console.log(timer, old_timer);
-    }
     */
+    if (frameCount % 60 == 0) {
+        timer++;
+        draw_block(timer);
+    }
 }
 
 function draw_block(number) {
