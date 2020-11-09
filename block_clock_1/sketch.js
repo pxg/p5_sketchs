@@ -23,14 +23,15 @@ function draw() {
 
 
 function draw_block(number) {
-    if (number < 1) {
-        return
-    }
+    // blocks are zero indexed
     number -= 1;
+    blocks_per_row = 3
 
-    // Calculate the row
-    y = height - unit - (int(number / 10) * unit);
-    // Calculate the column
-    x = (number % 10) * unit;
+    row = int(number / blocks_per_row)
+    y = height - unit - (row * unit);
+
+    column = (number % blocks_per_row)
+    x = column * unit;
+    // console.log(row, column)
     rect(x, y, unit, unit);
 }
